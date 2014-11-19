@@ -34,8 +34,8 @@ if (!file.exists(dir)) {
 # activity labels
 act_labels <- fread(paste(dir, 'activity_labels.txt', sep=''),
                     stringsAsFactor = TRUE, header = FALSE)
-setnames(act_labels, c("label_id", "activity"))
-setkey(act_labels, label_id)
+setnames(act_labels, c("activity_id", "activity"))
+setkey(act_labels, activity_id)
 
 # features
 features <- fread(paste(dir, 'features.txt', sep=''),
@@ -67,17 +67,17 @@ read_data <- function (type = 'test') {
     # add activity as column to data (the name of the activity, not the id).
     # (**part 3. of the project)
     activity = fread(file_activity, header = FALSE, nrows=NR)
-    setnames(activity, 1, 'label_id')
+    setnames(activity, 1, 'activity_id')
 
     # because we need to preserve order, and setkey() changes the order, we need
-    # to add label_id to the data table before calling setkey()
-    data[ , label_id := activity$label_id ] 
+    # to add activity_id to the data table before calling setkey()
+    data[ , activity_id := activity$activity_id ] 
 
-    # now we can put an index on label_id add the descriptive column
+    # now we can put an index on activity_id add the descriptive column
     # in an fast and efficient way
-    setkey(data, label_id)
+    setkey(data, activity_id)
     data <- merge(data, act_labels)
-    activity[,label_id := NULL]     # drop the label id
+    data[,activity_id := NULL]     # drop the label id
 
     data    # return the data
 }
