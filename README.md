@@ -28,8 +28,8 @@ I choosed to use data.table, because I have seen
 amazing improvements when large datasets are used. Basically it
 made certain operations possible in less than a minute, while the computer was slowly dieing when 
 data frames were used. Although the datasets in the project are small, I prefer to use data.table, because I
-I think it is very useful to get more experience with this package. On the way I found a bug and filed a
- [bug report]: https://github.com/Rdatatable/data.table/issues/956 (bug report fread)
+I think it is very useful to get more experience with this package. On the way I found a bug and filed
+a [bug report]: https://github.com/Rdatatable/data.table/issues/956 (bug report fread)
 
 When both packages dplyr and data.table are loaded,
 several warnings are thrown about functions of one packages being hidden by the other. To avoid confusing 
@@ -47,8 +47,7 @@ moment all the data is loaded.
 ## Usage
 
 The script is named `run_analysis.R` and needs data 
-which can be downloaded
- [here]: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+which can be downloaded [here]: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 Extract this zip-file in the directory of the script.
 
 The script needs to be started from the directory where it can be found. 
