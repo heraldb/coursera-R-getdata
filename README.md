@@ -18,6 +18,9 @@ You should create one R script called run_analysis.R that does the following.
 4. Appropriately labels the data set with descriptive variable names. 
    From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+NOTE: I found out too late that task 4 was about grouping on BOTH activity AND subject. I added the script
+run_analysis-corrected.R which fixes this.
+
 The data for this project contains both processed and preprocessed data (in subdirectory "Inertial Signals").
 The project description was not clear about which 
 data to use and merging both data sets did not make any sense to me. So I assumed only the processed data
